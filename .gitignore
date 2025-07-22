@@ -1,0 +1,19 @@
+# Byte-code files
+*.pyc
+__pycache__/
+
+# Virtual environment
+venv/
+.env # Crucial for security!
+
+# IDE-specific files (e.g., VS Code)
+.vscode/
+.idea/
+
+# Compiled C++ modules
+*.so # For pybind11
+*.pyd # For pybind11 (Windows)
+
+# Machine Learning Models (if they become very large or are regenerated)
+ml_models/*.pkl
+ml_models/*.h5
