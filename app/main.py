@@ -4,6 +4,8 @@ from web3 import Web3
 from dotenv import load_dotenv
 import os
 
+from app.api.v1 import auth_routes #Import the authentication router
+
 # --- Load environment variables from .env file ---
 # Purpose: python-dotenv loads key-value pairs from a .env file into
 # environment variables. This is one of the best practice for managing configurations
@@ -72,6 +74,11 @@ async def get_status():
         "current_block": current_block,
         "version": app.version
     }
+
+# --- Include the authentication router ---
+# Purpose: This line registers all the routes defined in auth_routes.py
+# with our main FastAPI application.
+app.include_router(auth_routes.router) #
 
 # How to run this file:
 # Save it as main.py inside the 'app' directory of my MoleculeLedgerBackend project.
